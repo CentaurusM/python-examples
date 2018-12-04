@@ -1,3 +1,7 @@
+
+# https://apscheduler.readthedocs.io/en/latest/userguide.html
+# https://github.com/agronholm/apscheduler/tree/master/examples
+
 from apscheduler.schedulers.background import BackgroundScheduler
 from apscheduler.schedulers.blocking import BlockingScheduler
  
@@ -32,5 +36,7 @@ if __name__ == '__main__':
     # Schedules job_function to be run on the third Friday
     #  of June, July, August, November and December at 00:00, 01:00, 02:00 and 03:00
     sched.add_job(job_function, 'cron', day_of_week='mon-fri', hour='0-9', minute="*", second="*/4")
+    
+    # scheduler.remove_job('my_job_id')
  
     sched.start()
